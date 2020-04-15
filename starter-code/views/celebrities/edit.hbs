@@ -1,0 +1,19 @@
+<h2>UPDATE AN EXISTING CELEBRITY</h2>
+
+<form action="/celebrities/{{this._id}}" method="post">
+
+  {{!-- <input type="text" name="identifier" hidden="hidden" value="{{this.id}}"> --}}
+
+  <label for="">name:</label>
+  <input type="text" name="name" value="{{this.name}}">
+
+  <label for="">occupation:</label>
+  <input type="text" name="occupation" value="{{this.occupation}}">
+
+  <label for="">catch phrase:</label>
+  <input type="text" name="catchPhrase" value="{{this.catchPhrase}}">
+
+  <button type="submit">UPDATE</button>
+</form>
+
+<a href="/celebrities">Return to List of Celebrities</a>

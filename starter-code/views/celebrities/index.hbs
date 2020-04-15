@@ -2,8 +2,15 @@
 
 {{#each myCelebrities}}
 <ul>
-    <li>{{this.name}} // {{this.occupation}} // {{this.catchPhrase}} </li>
+    <li>{{this.name}} // {{this.occupation}} // {{this.catchPhrase}} // <a href="/celebrities/{{this._id}}">Details</a>
+        <form action="/celebrities/{{this._id}}/edit" method="post"><button type="submit">EDIT</button>
+        </form>
+        <form action="/celebrities/{{this._id}}/delete" method="post"><button type="submit">DELETE</button>
+        </form>
+    </li>
 </ul>
 {{/each}}
 
-<a href="celebrities/new" >CREATE NEW CELEBRITY</a>
+
+
+<a href="/celebrities/new">CREATE NEW CELEBRITY</a>
