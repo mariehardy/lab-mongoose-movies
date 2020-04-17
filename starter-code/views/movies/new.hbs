@@ -11,7 +11,11 @@
   <input type="text" name="plot">
 
   <label for="">cast:</label>
-  <input type="text" name="cast">
+  <select multiple  name="cast">
+    {{#each allCelebs}}
+      <option value="{{this._id}}">{{this.name}}</option>
+    {{/each}}
+  </select> 
 
   <button type="submit">CREATE</button>
 </form>

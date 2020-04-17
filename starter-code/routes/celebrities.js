@@ -72,9 +72,7 @@ router.post('/:id/delete', (req, res, next) => {
 // UPDATE
 // GET /celebrities/:identifier/edit --> show edit celebrity form
 router.get('/:identifier/edit', (req, res, next) => {
-    console.log('Should show Edit page')
     Celebrity.findById(req.params.identifier).then((celeb) => {
-        console.log('celeb details from Mongo' + celeb)
         res.render('celebrities/edit', celeb)
     })
     .catch(err => {

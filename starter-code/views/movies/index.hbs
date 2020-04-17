@@ -2,8 +2,14 @@
 
 {{#each myMovies}}
 <ul>
-    <li>{{this.title}} // {{this.genre}} // {{this.plot}} // {{this.cast}} </li>
+    <li>{{this.title}} // {{this.genre}} // {{this.plot}} // {{#each this.cast}} {{this.name}}, {{/each}} 
+        <a href="/movies/{{this._id}}/show">Details</a>
+        <a href="/movies/{{this._id}}/edit" alt="edit"><button type="submit">EDIT</a>
+        <form action="/movies/{{this._id}}/delete" method="post"><button type="submit">DELETE</button>
+    </li>
 </ul>
 {{/each}}
 
 <a href="/movies/new">Create New Movie</a>
+</br>
+<a href="/celebrities/">View List Of Celebrities</a>

@@ -1,0 +1,26 @@
+<h2>UPDATE AN EXISTING MOVIE</h2>
+
+<form action="/movies/{{myMovie._id}}" method="post">
+
+  {{!-- <input type="text" name="identifier" hidden="hidden" value="{{this.id}}"> --}}
+
+  <label for="">title:</label>
+  <input type="text" name="title" value="{{myMovie.title}}">
+
+  <label for="">genre:</label>
+  <input type="text" name="genre" value="{{myMovie.genre}}">
+
+  <label for="">plot:</label>
+  <input type="text" name="plot" value="{{myMovie.plot}}">
+
+  <label for="">cast:</label>
+  <select multiple  name="cast">
+    {{#each allCelebs}}
+      <option value="{{this._id}}" {{#if this.selected}}selected{{/if}}>{{this.name}}</option>
+    {{/each}}
+  </select>
+
+  <button type="submit">UPDATE</button>
+</form>
+
+<a href="/movies">Return to List of Movies</a>

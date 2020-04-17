@@ -1,0 +1,12 @@
+<h2>{{this.title}}</h2>
+<ul>
+    <li>{{this.genre}}
+    </li>
+    <li>{{this.plot}}
+    </li>
+    {{#each this.cast}}
+    <li>{{this.name}}
+    </li>{{/each}}
+</ul>
+<a href="/movies">Return to List of Movies</a>
+<a href="/movies/{{this._id}}/edit" alt="edit"><button type="submit">EDIT</a>

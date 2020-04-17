@@ -7,7 +7,7 @@ const movieSchema = new Schema({
   title: String,
   genre: String,
   plot: String,
-  cast: String //IDs referencing the celebrity model
+  cast: [{ type: Schema.Types.ObjectId, ref: 'Celebrity' }], //IDs referencing the celebrity model
 });
 
 const Movie = mongoose.model('Movie', movieSchema);
